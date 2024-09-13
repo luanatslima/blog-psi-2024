@@ -5,30 +5,16 @@
 
 <div class="posts">
   {% for post in posts %}
-  <figure class="group">
-    <div><a class="imgover" href="#"><img src="{{ post.foto }}"  alt=""></a></div>
-    <figcaption>
-      <h6 class="heading">Masculina</h6>
-        <p>Nos meninos, a puberdade tem início um pouco mais tarde que nas meninas, entre os 9 e os 13 anos. Os testículos aumentam a produção de testosterona, que estimula o crescimento do genitais e dos pelos do corpo.
-            As principais características da puberdade nos meninos são:</p>
-        <li>Aumento do volume dos testículos, que passa de 3 para 4 ml, podendo chegar aos 25 ml no final da puberdade;
-          </li>
-      </figcaption>
-  </figure>
+    <figure class="group">
+      {% if post.foto %}
+        <img src="{{ post.foto.url }}"  alt="" class="post-img">
+      {% else %}
+        <img src="{% static 'img/img1.jpg'%}"  alt="" class="post-img">
+      {% endif %}
+        <h6 class="post-titulo" src="{{ post.titulo }}"></h6>
+        <p class="post-conteudo" src="{{ post.conteudo }}"></p>
+    </figure>
   {% endfor %}
+</div>
 
-  </div>
-  <div class="wrapper row5">
-    <div id="copyright" class="hoc clear"> 
-      <p class="fl_left">Copyright &copy; 2018 - All Rights Reserved - <a href="#">Domain Name</a></p>
-      <p class="fl_right">Template by <a target="_blank" href="https://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
-    </div>
-  </div>
-  <a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
-  <!-- JAVASCRIPTS -->
-  <script src="layout/scripts/jquery.min.js"></script>
-  <script src="layout/scripts/jquery.backtotop.js"></script>
-  <script src="layout/scripts/jquery.mobilemenu.js"></script>
-</body>
-</html>
 {% endblock %}
