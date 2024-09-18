@@ -3,6 +3,7 @@ from .models import Post
 
 def index (request):
     posts = Post.objects.all()
+    print(posts)
     context = {
         "posts" : posts,
     }

@@ -3,16 +3,16 @@
 
 {% block content %}
 
-<div class="posts">
+<div class="container">
   {% for post in posts %}
-    <figure class="group">
-      {% if post.foto %}
-        <img src="{{ post.foto.url }}"  alt="" class="post-img">
-      {% else %}
-        <img src="{% static 'img/img1.jpg'%}"  alt="" class="post-img">
-      {% endif %}
-        <h6 class="post-titulo" src="{{ post.titulo }}"></h6>
-        <p class="post-conteudo" src="{{ post.conteudo }}"></p>
+    <figure class="posts">
+        <h6 class="post-titulo" >{{ post.titulo }}</h6>
+        {% if post.foto %}
+          <img src="{{ post.foto.url }}"  alt="" class="post-img">
+        {% else %}
+          <img src="{% static 'img/img1.jpg'%}"  alt="" class="post-img">
+        {% endif %}
+        <p class="post-conteudo" >{{ post.conteudo }}</p>
     </figure>
   {% endfor %}
 </div>
