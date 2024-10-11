@@ -15,11 +15,11 @@
         <p class="post-conteudo" >{{ post.conteudo }}</p>
     </figure>
     <div class="card">
-      <img src="{% static 'img/img2.jpg'%}" class="card-img-top" alt="...">
+      <img src="{% static 'img/img2.jpg'%}" class="card-img-top" alt="">
       <div class="card-body">
         <h5 class="card-title">Puberdade Masculina</h5>
         <p class="card-text"></p>
-        <a href="puberdademasculina.html" class="btn btn-primary">Acessar</a>
+        <a href="{{ puberdademasculina.html }}" class="btn btn-primary">Acessar</a>
       </div>
     </div>
   {% endfor %}
