@@ -2,7 +2,13 @@ from django.shortcuts import render
 from .models import Post
 
 def puberdademasculina (request):
-    return render(request, 'puberdademasculina.html')
+    lista_caracteristicas = [
+        {}
+    ]
+    context = {
+        "caracteristicas" : lista_caracteristicas,
+    }
+    return render(request, 'puberdademasculina.html', context)
 
 def index (request):
     posts = Post.objects.all()
