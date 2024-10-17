@@ -1,12 +1,12 @@
 from django.shortcuts import render
 from .models import Post
+from .models import Topico
 
 def puberdademasculina (request):
-    lista_caracteristicas = [
-        {}
-    ]
+    topicos = Topico.objects.all()
+    print(topicos)
     context = {
-        "caracteristicas" : lista_caracteristicas,
+        "topicos": topicos,
     }
     return render(request, 'puberdademasculina.html', context)
 

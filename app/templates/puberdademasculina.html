@@ -2,6 +2,15 @@
 {% load static %}
 
 {% block content %}
-
-
+<div class="container">
+    {% for topico in topicos %}
+        <h6>{{ topico.titulo }}</h6>
+        {% if topico.foto %}
+            <img src="{{ topico.foto.url }}" alt="Imagem do tópico" style="max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 15px;">
+        {% else %}
+            <img src="{% static 'img/img1.jpg' %}" alt="Imagem padrão" static="">
+        {% endif %}
+        <p>{{ topico.conteudo }}</p>
+    {% endfor %}
+</div>
 {% endblock %}

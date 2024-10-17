@@ -6,24 +6,27 @@
 <div class="container">
   {% for post in posts %}
     <figure class="posts">
-        <h6 class="post-titulo" >{{ post.titulo }}</h6>
-        {% if post.foto %}
-          <img src="{{ post.foto.url }}"  alt="" class="post-img">
-        {% else %}
-          <img src="{% static 'img/img1.jpg'%}"  alt="" class="post-img">
-        {% endif %}
-        <p class="post-conteudo" >{{ post.conteudo }}</p>
+      <h6 class="post-titulo">{{ post.titulo }}</h6>
+      {% if post.foto %}
+        <img src="{{ post.foto.url }}" alt="{{ post.titulo }}" style="max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 15px;">
+      {% else %}
+        <img src="{% static 'img/img1.jpg' %}" alt="Imagem padrão" class="post-img">
+      {% endif %}
+      <p class="post-conteudo">{{ post.conteudo }}</p>
     </figure>
-    </div>
-    <div class="card">
-      <img src="{% static 'img/img2.jpg'%}" class="card-img-top" alt="">
-      <div class="card-body">
-        <h5 class="card-title">Puberdade Masculina</h5>
-        <p class="card-text"></p>
-        <a href="puberdademasculina.html" class="btn btn-primary">Acessar</a>
-    </div>
-  </div>
   {% endfor %}
   
+  <div class="card">
+    <img src="{% static 'img/img2.jpg' %}" class="card-img-top" alt="Puberdade Masculina">
+    <div class="card-body">
+      <h5 class="card-title">Puberdade Masculina</h5>
+      <p class="card-text">Nos meninos, a puberdade tem início um pouco mais tarde que nas meninas, entre 
+        os 9 e os 13 anos. Os testículos aumentam a produção de testosterona, que estimula o crescimento 
+        dos genitais e dos pelos do corpo.
+      </p>
+      <a href="{% url 'puberdademasculina' %}" class="btn btn-primary">Acessar</a>
+    </div>
+  </div>
+</div>
 
 {% endblock %}
